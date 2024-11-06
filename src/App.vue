@@ -1,26 +1,19 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <EncuestaPrincipal :datosEncuesta="datosEncuesta" />
 </template>
-
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import EncuestaPrincipal from './components/EncuestaPrincipal.vue';
+import encuestaData from './data/datos.json'; // Importa el archivo JSON
 
 export default {
-  name: 'App',
   components: {
-    HelloWorld
+    EncuestaPrincipal
+  },
+  data() {
+    return {
+      // Asigna los datos del JSON a la propiedad `datosEncuesta`
+      datosEncuesta: encuestaData
+    };
   }
-}
+};
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
